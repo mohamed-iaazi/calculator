@@ -20,10 +20,20 @@ public class CalcUtiles {
     public int Puissane(int a,int b){
         return (int) Math.pow(a,b);
     }
-    private int Factorial(int a,int b){
-        return a*(b-1);
+    public int Factorial(int a){
+        if (a==0){
+            a=1;
+            return a;
+        }
+        else {
+            for (int i = a-1; i >= 1; i--) {
+                a = a * i;
+            }
+
+            return a;
+        }
     }
-    private int SquireRoot(int a){
+    public int SquireRoot(int a){
         return (int)Math.sqrt(a);
     }
 
