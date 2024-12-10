@@ -10,7 +10,12 @@ public class CalcUtiles {
     }
 
     public int Devided(int a,int b){
-        return a/b;
+
+        if (a<b){
+            System.out.println("\n \s    The First Number Should Be bigger Then The Second");
+            return 0;
+        }
+        else { return a/b;}
     }
 
     public int subtraction(int a,int b){

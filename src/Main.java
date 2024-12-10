@@ -59,7 +59,7 @@ public class Main {
                      a=input.nextInt();
                      System.out.print("\n    Enter Second Number : ");
                      b=input.nextInt();
-                     System.out.printf("\n   The Addition of  %d is %d", a, f.Addition(a,b));
+                     System.out.printf("\n   The Addition of  %d + %d is %d", a,b, f.Addition(a,b));
                      break;
                  case 2:
                      costumTitle.Title("Division");
@@ -67,7 +67,7 @@ public class Main {
                      a=input.nextInt();
                      System.out.print("\n    Enter Second Number : ");
                      b=input.nextInt();
-                     System.out.printf("\n   The Division of  %d is %d", a, f.Devided(a,b));
+                     System.out.printf("\n   The Division of  %d / %d is %d", a,b, f.Devided(a,b));
                      break;
                  case 3:
                      costumTitle.Title("subtraction");
@@ -75,7 +75,7 @@ public class Main {
                      a=input.nextInt();
                      System.out.print("\n    Enter Second Number : ");
                      b=input.nextInt();
-                     System.out.printf("\n   The subtraction of  %d is %d", a, f.subtraction(a,b));
+                     System.out.printf("\n   The subtraction of  %d - %d is %d", a,b, f.subtraction(a,b));
 
                      break;
                  case 4:
@@ -84,7 +84,7 @@ public class Main {
                      a=input.nextInt();
                      System.out.print("\n    Enter Second Number : ");
                      b=input.nextInt();
-                     System.out.printf("\n   The Multiplication of  %d is %d", a,  f.Multiplication(a,b));
+                     System.out.printf("\n   The Multiplication of  %d * %d  is %d", a,b,  f.Multiplication(a,b));
                      break;
 
                  case 5:
