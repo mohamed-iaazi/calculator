@@ -59,35 +59,36 @@ public class Main {
                      a=input.nextInt();
                      System.out.print("\n    Enter Second Number : ");
                      b=input.nextInt();
-                     System.out.printf("\n   The Multiplication of  %d is %d", a, f.subtraction(a,b));
-                     System.out.printf("\n   The Multiplication of  %d is %d", a, f.Addition(a,b));
+                     System.out.printf("\n   The Addition of  %d is %d", a, f.Addition(a,b));
                      break;
                  case 2:
+                     costumTitle.Title("Division");
                      System.out.print("\n    Enter First Number : ");
                      a=input.nextInt();
                      System.out.print("\n    Enter Second Number : ");
                      b=input.nextInt();
-                     System.out.printf("\n   The Multiplication of  %d is %d", a, f.Devided(a,b));
+                     System.out.printf("\n   The Division of  %d is %d", a, f.Devided(a,b));
                      break;
                  case 3:
+                     costumTitle.Title("subtraction");
                      System.out.print("\n    Enter First Number : ");
                      a=input.nextInt();
                      System.out.print("\n    Enter Second Number : ");
                      b=input.nextInt();
-                     System.out.printf("\n   The Multiplication of  %d is %d", a, f.subtraction(a,b));
+                     System.out.printf("\n   The subtraction of  %d is %d", a, f.subtraction(a,b));
 
                      break;
                  case 4:
+                     costumTitle.Title("Multiplication");
                      System.out.print("\n    Enter First Number : ");
                      a=input.nextInt();
                      System.out.print("\n    Enter Second Number : ");
                      b=input.nextInt();
                      System.out.printf("\n   The Multiplication of  %d is %d", a,  f.Multiplication(a,b));
-
-
                      break;
 
                  case 5:
+                     costumTitle.Title("Puissance");
                      System.out.print("\n    Enter The base of the logarithm : ");
                      a=input.nextInt();
                      System.out.print("\n    Enter The Exponent : ");
@@ -95,16 +96,19 @@ public class Main {
                      System.out.printf("\n   The Puissance of  %d is %d", a,  f.Puissane(a,b));
                      break;
                  case 6:
+                     costumTitle.Title("Squire Root");
                      System.out.print("\n    Enter The squire root Number : ");
                      a=input.nextInt();
                      System.out.printf("\n     The squire root of %d is %d", a, f.SquireRoot(a));
                      break;
                  case 7:
+                     costumTitle.Title("Factorial");
                      System.out.print("\n    Enter Factorial Integer n! : ");
                      a=input.nextInt();
                      System.out.printf("\n   The Factorial of  %d is %d", a, f.Factorial(a));
                      break;
                  case 8 : case 0:
+                     costumTitle.Title("Exit");
                      System.exit(0);
 
                      break;
