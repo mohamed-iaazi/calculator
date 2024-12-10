@@ -1,26 +1,28 @@
+import utils.CalcUtiles;
+
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Main {
-    
-    public  static boolean ishere;
+   static int selected,a,b;
+
 
     public static void main(String[] args) {
 
-        do{
+        while (selected != 8){
+            // To keep The Console Runing
 
-                    MainMenu();
-
+            MainMenu();
         }
-        while (!ishere);
+
 
     }
 
     public static void MainMenu(){
         Scanner input=new Scanner(System.in);
-        String choix;
-        int selected;
-
-        System.out.println("-----------------------Menu ---------------------------\n"
+        CalcUtiles f=new CalcUtiles();
+// Main Menu
+        System.out.print("-----------------------Menu ---------------------------\n"
                   +"\n        Enter (1) To calculate The  + Addition          \n"
                   +"\n        Enter (2) To calculate The  / Division         \n"
                   +"\n        Enter (3) To calculate The  / subtraction      \n"
@@ -30,20 +32,45 @@ public class Main {
                   +"\n        Enter (7) To calculate The   Division          \n"
                   +"\n                 Enter (8) To Exit  " +
                 "                   \n"
-                  +"\n\n        Enter You Choice Number                    \n" );
+                  +"\n\n        Enter You Choice Number : " );
+        selected=input.nextInt();
 
-             choix=input.nextLine();
              try {
-                 selected=Integer.getInteger(choix);
-                 switch (selected){
-                     case 1:
 
-                         break;
+                 switch (selected){
+                 case 1:
+                 System.out.print("\n    Enter First Number : ");
+                 a=input.nextInt();
+                 System.out.print("\n    Enter Second Number : ");
+                 b=input.nextInt();
+                 f.Addition(a,b);
+                 break;
+                 case 2:
+                     System.out.print("\n    Enter First Number : ");
+                     a=input.nextInt();
+                     System.out.print("\n    Enter Second Number : ");
+                     b=input.nextInt();
+                     f.Devided(a,b);
+                     break;
+                 case 3:
+                     System.out.print("\n    Enter First Number : ");
+                     a=input.nextInt();
+                     System.out.print("\n    Enter Second Number : ");
+                     b=input.nextInt();
+                     f.subtraction(a,b);
+                     break;
+                 case 4:
+                     System.out.print("\n    Enter First Number : ");
+                     a=input.nextInt();
+                     System.out.print("\n    Enter Second Number : ");
+                     b=input.nextInt();
+                     f.Multiplication(a,b);
+                     break;
 
                  }
 
              } catch (Exception e) {
-                 throw new RuntimeException(e);
+                 System.out.print("\n Error  Try again "+e+"\n\n");
 
              }
 
