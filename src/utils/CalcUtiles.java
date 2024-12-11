@@ -1,15 +1,15 @@
 package utils;
 
 public class CalcUtiles {
-    public int Addition(int a,int b){
+    static  public int Addition(int a,int b){
         return a+b;
 
     }
-    public int Multiplication(int a,int b){
+    public  static int Multiplication(int a,int b){
         return a*b;
     }
 
-    public int Devided(int a,int b){
+    public static int Devided(int a,int b){
 
         if (a<b){
             System.out.println("\n \s    The First Number Should Be bigger Then The Second");
@@ -18,14 +18,14 @@ public class CalcUtiles {
         else { return a/b;}
     }
 
-    public int subtraction(int a,int b){
+    public static int subtraction(int a,int b){
         return a-b;
     }
 
-    public int Puissane(int a,int b){
+    public static int Puissane(int a,int b){
         return (int) Math.pow(a,b);
     }
-    public int Factorial(int a){
+    public static int Factorial(int a){
         if (a==0){
             a=1;
             return a;
@@ -38,7 +38,7 @@ public class CalcUtiles {
             return a;
         }
     }
-    public int SquireRoot(int a){
+    public static int SquireRoot(int a){
         return (int)Math.sqrt(a);
     }
 
