@@ -1,11 +1,14 @@
 import utils.CalcUtiles;
 import utils.CostumUtiles;
 
+import javax.xml.transform.Result;
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 public class Main {
    static int selected,a,b;
+   static CostumUtiles costumTitle=new CostumUtiles();
+   static Scanner input=new Scanner(System.in);
+
 
 
     public static void main(String[] args) {
@@ -20,9 +23,8 @@ public class Main {
     }
 
     public static void MainMenu(){
-        Scanner input=new Scanner(System.in);
-        CalcUtiles f=new CalcUtiles();
-        CostumUtiles costumTitle=new CostumUtiles();
+
+
 // Main Menu
   System.out.print("""
           
@@ -54,58 +56,32 @@ public class Main {
 
                  switch (selected){
                  case 1:
-                     costumTitle.Title("Addition");
-                     System.out.print("\n    Enter First Number : ");
-                     a=input.nextInt();
-                     System.out.print("\n    Enter Second Number : ");
-                     b=input.nextInt();
-                     System.out.printf("\n   The Addition of  %d + %d is %d", a,b, f.Addition(a,b));
+                     getinput(selected,"Addition");
+                    Result(CalcUtiles.Addition(a,b),"Addition"); ;
+
                      break;
                  case 2:
-                     costumTitle.Title("Division");
-                     System.out.print("\n    Enter First Number : ");
-                     a=input.nextInt();
-                     System.out.print("\n    Enter Second Number : ");
-                     b=input.nextInt();
-                     System.out.printf("\n   The Division of  %d / %d is %d", a,b, f.Devided(a,b));
+                     getinput(selected,"Division",f.Devided(a,b));
+                     Result(CalcUtiles.);
                      break;
                  case 3:
-                     costumTitle.Title("subtraction");
-                     System.out.print("\n    Enter First Number : ");
-                     a=input.nextInt();
-                     System.out.print("\n    Enter Second Number : ");
-                     b=input.nextInt();
-                     System.out.printf("\n   The subtraction of  %d - %d is %d", a,b, f.subtraction(a,b));
+                     getinput(selected,"subtraction",f.subtraction(a,b));
 
                      break;
                  case 4:
-                     costumTitle.Title("Multiplication");
-                     System.out.print("\n    Enter First Number : ");
-                     a=input.nextInt();
-                     System.out.print("\n    Enter Second Number : ");
-                     b=input.nextInt();
-                     System.out.printf("\n   The Multiplication of  %d * %d  is %d", a,b,  f.Multiplication(a,b));
+                     getinput(selected,"Multiplication",f.Multiplication(a,b));
                      break;
 
                  case 5:
-                     costumTitle.Title("Puissance");
-                     System.out.print("\n    Enter The base of the logarithm : ");
-                     a=input.nextInt();
-                     System.out.print("\n    Enter The Exponent : ");
-                     b=input.nextInt();
-                     System.out.printf("\n   The Puissance of  %d is %d", a,  f.Puissane(a,b));
+                     getinput(selected,"Puissance",f.Puissane(a,b));
                      break;
                  case 6:
-                     costumTitle.Title("Squire Root");
-                     System.out.print("\n    Enter The squire root Number : ");
-                     a=input.nextInt();
-                     System.out.printf("\n     The squire root of %d is %d", a, f.SquireRoot(a));
+                     getinput(selected,"Squire Root",f.SquireRoot(a));
+
                      break;
                  case 7:
-                     costumTitle.Title("Factorial");
-                     System.out.print("\n    Enter Factorial Integer n! : ");
-                     a=input.nextInt();
-                     System.out.printf("\n   The Factorial of  %d is %d", a, f.Factorial(a));
+                     getinput(selected,"Factorial",f.Factorial(a));
+
                      break;
                  case 8 : case 0:
                      costumTitle.Title("Exit");
@@ -125,5 +101,25 @@ public class Main {
 
              }
 
+    }
+
+    protected static void getinput(int index,String title){
+        costumTitle.Title(title);
+        if (index<5) {
+            System.out.print("\n    Enter First Number : ");
+            a = input.nextInt();
+            System.out.print("\n    Enter Second Number : ");
+            b = input.nextInt();
+        }
+        else {
+            System.out.print("\n    Enter  Number : ");
+            a = input.nextInt();
+        }
+
+    }
+    protected static void Result(int returned, String title){
+        System.out.printf("\n " +
+                        "  The %s of  %d + %d is %d",title,
+                a,b,returned);
     }
 }
