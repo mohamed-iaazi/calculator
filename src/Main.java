@@ -5,12 +5,13 @@ import javax.xml.transform.Result;
 import java.util.Scanner;
 
 public class Main {
-   static int selected,a,b;
+  static   int selected;
+    static  int a,b;
    static Scanner input=new Scanner(System.in);
 
 
 
-    public static void main(String[] args) {
+    public static  void main(String[] args) {
 
         while (selected != 8){
             // To keep The Console Runing
@@ -22,6 +23,7 @@ public class Main {
     }
 
     public static void MainMenu(){
+String choix;
 
 
 // Main Menu
@@ -49,10 +51,11 @@ public class Main {
           
           
                   Enter You Choice Number :\s""");
-        selected=input.nextInt();
+        choix=input.next();
+
 
              try {
-
+                 selected= Integer.parseInt(choix);
                  switch (selected){
                  case 1:
                      getinput(selected,"Addition");
