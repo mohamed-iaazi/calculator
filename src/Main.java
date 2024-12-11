@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class Main {
    static int selected,a,b;
-   static CostumUtiles costumTitle=new CostumUtiles();
    static Scanner input=new Scanner(System.in);
 
 
@@ -35,7 +34,7 @@ public class Main {
           
                   Enter (2) To calculate The  / Division        \s
           
-                  Enter (3) To calculate The  / subtraction     \s
+                  Enter (3) To calculate The  - subtraction     \s
           
                   Enter (4) To calculate The  * Multiplication  \s
           
@@ -57,34 +56,44 @@ public class Main {
                  switch (selected){
                  case 1:
                      getinput(selected,"Addition");
-                    Result(CalcUtiles.Addition(a,b),"Addition"); ;
+                    Result(CalcUtiles.Addition(a,b),"Addition",'+'); ;
 
                      break;
                  case 2:
-                     getinput(selected,"Division",f.Devided(a,b));
-                     Result(CalcUtiles.);
+                     getinput(selected,"Division");
+                     Result(CalcUtiles.Devided(a,b),"Division",'/');
                      break;
                  case 3:
-                     getinput(selected,"subtraction",f.subtraction(a,b));
+                     getinput(selected,"subtraction");
+                     Result(CalcUtiles.subtraction(a,b),"subtraction",'-');
+
 
                      break;
                  case 4:
-                     getinput(selected,"Multiplication",f.Multiplication(a,b));
+                     getinput(selected,"Multiplication");
+                     Result(CalcUtiles.Multiplication(a,b),"Multiplication",'*');
+
                      break;
 
                  case 5:
-                     getinput(selected,"Puissance",f.Puissane(a,b));
+                     getinput(selected,"Puissance");
+                     Result(CalcUtiles.Puissane(a,b),"Puissance",':');
+
                      break;
                  case 6:
-                     getinput(selected,"Squire Root",f.SquireRoot(a));
+                     getinput(selected,"Squire Root");
+                     Result(CalcUtiles.SquireRoot(a),"Squire Root",':');
+
 
                      break;
                  case 7:
-                     getinput(selected,"Factorial",f.Factorial(a));
+                     getinput(selected,"Factorial");
+                     Result(CalcUtiles.Factorial(a),"Factorial",'!');
+
 
                      break;
                  case 8 : case 0:
-                     costumTitle.Title("Exit");
+                     CostumUtiles.Title("Exit");
                      System.exit(0);
 
                      break;
@@ -104,7 +113,7 @@ public class Main {
     }
 
     protected static void getinput(int index,String title){
-        costumTitle.Title(title);
+        CostumUtiles.Title(title);
         if (index<5) {
             System.out.print("\n    Enter First Number : ");
             a = input.nextInt();
@@ -117,9 +126,17 @@ public class Main {
         }
 
     }
-    protected static void Result(int returned, String title){
-        System.out.printf("\n " +
-                        "  The %s of  %d + %d is %d",title,
-                a,b,returned);
+    protected static void Result(int returned, String title,char symbole){
+        if (b==0){
+
+            System.out.printf("\n " +
+                            "  The %s of  %d %c  is : %d",title,
+                    a,symbole,returned);
+        }
+        else {
+            System.out.printf("\n " +
+                            "  The %s of  %d %c %d is %d", title,
+                    a, symbole, b, returned);
+        }
     }
 }
