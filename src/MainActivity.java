@@ -1,13 +1,12 @@
 import utils.CalcUtiles;
 import utils.CostumUtiles;
 
-import javax.xml.transform.Result;
 import java.util.Scanner;
 
-public class Main {
+public class MainActivity {
   static   int selected;
-    static  int a,b;
-   static Scanner input=new Scanner(System.in);
+  static  int a,b;
+  static Scanner input=new Scanner(System.in);
 
 
 
@@ -51,7 +50,7 @@ String choix;
           
           
                   Enter You Choice Number :\s""");
-        choix=input.next();
+        choix=input.nextLine();
 
 
              try {
@@ -63,7 +62,10 @@ String choix;
 
                      break;
                  case 2:
-                     getinput(selected,"Division");
+                     a=0;b=0;
+                     while (a==0||b==0){
+                         getinput(selected,"Division");
+                     }
                      Result(CalcUtiles.Devided(a,b),"Division",'/');
                      break;
                  case 3:
@@ -117,29 +119,35 @@ String choix;
 
     protected static void getinput(int index,String title){
         CostumUtiles.Title(title);
+
         if (index<5) {
             System.out.print("\n    Enter First Number : ");
-            a = input.nextInt();
+            a = setInput();
             System.out.print("\n    Enter Second Number : ");
-            b = input.nextInt();
+            b =setInput();
         }
         else {
-            System.out.print("\n    Enter  Number : ");
-            a = input.nextInt();
+            System.out.print("\n    Enter The Number : ");
+            a = setInput();
         }
 
     }
     protected static void Result(int returned, String title,char symbole){
         if (b==0){
-
             System.out.printf("\n " +
                             "  The %s of  %d %c  is : %d",title,
                     a,symbole,returned);
-        }
-        else {
+        } else if (b!=0 || a!=0) {
             System.out.printf("\n " +
                             "  The %s of  %d %c %d is %d", title,
                     a, symbole, b, returned);
         }
+
+    }
+
+    protected static int setInput(){
+        Scanner s=new Scanner(System.in);
+        return s.nextInt();
+
     }
 }
