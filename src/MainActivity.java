@@ -58,7 +58,7 @@ String choix;
                  switch (selected){
                  case 1:
                      getinput(selected,"Addition");
-                    Result(CalcUtiles.Addition(a,b),"Addition",'+'); ;
+                    Result(CalcUtiles.Addition(a,b),"Addition",'+'); 
 
                      break;
                  case 2:
@@ -137,7 +137,7 @@ String choix;
             System.out.printf("\n " +
                             "  The %s of  %d %c  is : %d",title,
                     a,symbole,returned);
-        } else if (b!=0 || a!=0) {
+        } else {
             System.out.printf("\n " +
                             "  The %s of  %d %c %d is %d", title,
                     a, symbole, b, returned);
